@@ -1,0 +1,4 @@
+[submodule "dist"]
+	path = dist
+	url = git@github.com:skratchdot/react-bootstrap-multiselect.git
+	branch = gh-pages
