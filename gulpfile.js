@@ -17,6 +17,7 @@ gulp.task('bootstrap-dropdown', function () {
 		.pipe(wrap('var jQuery = require("jquery");\nexports.init = function () {\n<%= contents %>};'))
 		.pipe(rename('bootstrap-dropdown.js'))
 		.pipe(gulp.dest('./src'))
+		.pipe(gulp.dest('./lib'));
 });
 
 gulp.task('lint', function () {
@@ -35,7 +36,7 @@ gulp.task('lint', function () {
 	});
 });
 
-gulp.task('prepublish', function () {
+gulp.task('prepublish', ['bootstrap-dropdown'], function () {
 	gulp.src('./src/index.js')
 		.pipe(react())
 		.pipe(gulp.dest('./lib'));

@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-multiselect",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A multiselect component for react (with bootstrap). This is a react port of: https://github.com/davidstutz/bootstrap-multiselect",
   "main": "./lib/index.js",
   "scripts": {
