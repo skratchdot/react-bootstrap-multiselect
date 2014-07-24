@@ -39,7 +39,6 @@ module.exports = React.createClass({
 		}
 	},
 	componentDidMount: function () {
-		console.log('mounted!!!');
 		var $this = this;
 		// initialize
 		$this.$multiselect = $($this.refs.multiselect.getDOMNode());
@@ -48,14 +47,12 @@ module.exports = React.createClass({
 		$this.$multiselect.multiselect('dataprovider', $this.props.data || []);
 	},
 	componentWillUnmount: function () {
-		console.log('unmounted');
 		if (this.$multiselect) {
 			this.$multiselect.multiselect('destroy');
 		}
 		this.$multiselect = null;
 	},
 	render: function () {
-		console.log('render');
 		//this.setOptionsFromProps();
 		return this.transferPropsTo(
 			<select ref="multiselect">
