@@ -5,7 +5,7 @@ var Grid = require('react-bootstrap').Grid;
 var Row = require('react-bootstrap').Row;
 var Col = require('react-bootstrap').Col;
 var Header = require('./Header');
-var Multiselect = require('../index.js');
+var Multiselect = require('../../src/index.js');
 var fileContent = require('./AppContent').content;
 
 var App = React.createClass({
