@@ -14,7 +14,9 @@ A multiselect component for react (with bootstrap). This is a react port of:
 
 ## Getting Started
 
-Install the module with: `npm install --save react-bootstrap-multiselect`
+1) Install the module with: `npm install --save react-bootstrap-multiselect`
+
+2) Create your module (you need to use something like browserify to build)
 
 ```javascript
 var React = require('react');
@@ -28,6 +30,11 @@ var someReactComponent = React.createClass({
 });
 ```
 
+3) Include the multi-select CSS in your project somewhere. The CSS file is here: [bootstrap-multiselect.min.css](https://raw.githubusercontent.com/skratchdot/react-bootstrap-multiselect/gh-pages/css/bootstrap-multiselect.min.css) (don't hotlink- download and host your own copy)
+
+```html
+<link rel="stylesheet" href="bootstrap-multiselect.min.css" type="text/css" />
+```
 
 ## Documentation
 
