@@ -30,10 +30,12 @@ var someReactComponent = React.createClass({
 });
 ```
 
-3) Include the multi-select CSS in your project somewhere. The CSS file is here: [bootstrap-multiselect.min.css](https://raw.githubusercontent.com/skratchdot/react-bootstrap-multiselect/gh-pages/css/bootstrap-multiselect.min.css) (don't hotlink- download and host your own copy)
+3) Include the multi-select CSS in your project somewhere. The CSS file is here:
+[bootstrap-multiselect.css](https://raw.githubusercontent.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css)
+(don't hotlink- download and host your own copy)
 
 ```html
-<link rel="stylesheet" href="bootstrap-multiselect.min.css" type="text/css" />
+<link rel="stylesheet" href="bootstrap-multiselect.css" type="text/css" />
 ```
 
 ## Documentation

@@ -1,11 +1,9 @@
 /** @jsx React.DOM */
 'use strict';
 var React = require('react');
-var Grid = require('react-bootstrap').Grid;
-var Row = require('react-bootstrap').Row;
-var Col = require('react-bootstrap').Col;
+var BS = require('react-bootstrap');
 var Header = require('./Header');
-var Multiselect = require('../../src/index.js');
+var Multiselect = require('../../lib/index.js');
 var fileContent = require('./AppContent').content;
 
 var App = React.createClass({
@@ -31,10 +29,10 @@ var App = React.createClass({
 	},
 	render: function () {
 		return (
-			<Grid>
+			<BS.Grid>
 				<Header />
-				<Row>
-					<Col md={3}>
+				<BS.Row>
+					<BS.Col md={3}>
 						<h2>Demo:</h2>
 						<h4>no optgroups:</h4>
 						<Multiselect onChange={this.handleChange} data={this.state.list} multiple />
@@ -44,13 +42,13 @@ var App = React.createClass({
 						<Multiselect onChange={this.handleChange} data={this.state.groups} />
 						<h4>large list:</h4>
 						<Multiselect onChange={this.handleChange} data={this.state.large} multiple />
-					</Col>
-					<Col md={9}>
+					</BS.Col>
+					<BS.Col md={9}>
 						<h2>Demo Source Code:</h2>
 						<textarea className="form-control" style={{width:'100%',height:'500px'}} readOnly value={fileContent} />
-					</Col>
-				</Row>
-			</Grid>
+					</BS.Col>
+				</BS.Row>
+			</BS.Grid>
 		);
 	}
 });

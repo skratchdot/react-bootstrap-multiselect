@@ -1,24 +1,49 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var cssmin = require('gulp-cssmin');
+var download = require('gulp-download');
 var exec = require('child_process').exec;
 var less = require('gulp-less');
-var rename = require("gulp-rename");
+var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var react = require('gulp-react');
+var replace = require('gulp-replace');
 var fs = require('fs');
-var wrap = require("gulp-wrap");
+var wrap = require('gulp-wrap');
 
 var port = 8080;
 
+// this task downloads the lastest .js and .less from the 'parent'
+// library that we are wrapping for react
+gulp.task('download', function () {
+	// download the .js file
+	download('https://raw.githubusercontent.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js')
+		.pipe(rename('bootstrap-multiselect-original.js'))
+		.pipe(gulp.dest('./lib/'));
+	// download the .less file
+	download('https://raw.githubusercontent.com/davidstutz/bootstrap-multiselect/master/dist/less/bootstrap-multiselect.less')
+		.pipe(gulp.dest('./less/'));
+	// download the .css file
+	download('https://raw.githubusercontent.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css')
+		.pipe(gulp.dest('./css/'));
+});
+
 gulp.task('bootstrap-dropdown', function () {
 	gulp.src('./node_modules/bootstrap/js/dropdown.js')
-		.pipe(wrap('var jQuery = require("jquery");\nexports.init = function () {\n<%= contents %>};'))
+		.pipe(wrap('var jQuery = require(\'jquery\');\nexports.init = function () {\n<%= contents %>};'))
 		.pipe(rename('bootstrap-dropdown.js'))
-		.pipe(gulp.dest('./src'))
 		.pipe(gulp.dest('./lib'));
 });
+
+gulp.task('bootstrap-multiselect', function () {
+	gulp.src('./lib/bootstrap-multiselect-original.js')
+		.pipe(wrap('var jQuery = require(\'jquery\');\nexports.init = function () {\n<%= contents %>};'))
+		.pipe(replace('window.jQuery', 'jQuery'))
+		.pipe(rename('bootstrap-multiselect.js'))
+		.pipe(gulp.dest('./lib'));
+});
+
 
 gulp.task('lint', function () {
 	exec([
@@ -34,12 +59,6 @@ gulp.task('lint', function () {
 			console.log(stdout);
 		}
 	});
-});
-
-gulp.task('prepublish', ['bootstrap-dropdown'], function () {
-	gulp.src('./src/index.js')
-		.pipe(react())
-		.pipe(gulp.dest('./lib'));
 });
 
 gulp.task('fonts', function () {
@@ -95,11 +114,11 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function () {
-	gulp.watch(['./src/index.js','./demo/src/**/*.js'], ['build']);
+	gulp.watch(['./gulpfile.js', './lib/**/*.js','./demo/src/**/*.js'], ['build']);
 });
 
-gulp.task('build', ['lint', 'fonts', 'app-content', 'demo', 'prepublish']);
-gulp.task('default', ['bootstrap-dropdown', 'build', 'server', 'watch']);
+gulp.task('build', ['lint', 'fonts', 'app-content', 'demo']);
+gulp.task('default', ['bootstrap-dropdown', 'bootstrap-multiselect', 'build', 'server', 'watch']);
 
 //handle errors
 process.on('uncaughtException', function (e) {
