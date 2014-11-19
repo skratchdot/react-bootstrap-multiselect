@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var cssmin = require('gulp-cssmin');
@@ -52,7 +54,7 @@ gulp.task('lint', function () {
 			//'--show-non-errors',
 			'--config',
 			'./.jshint',
-			'./index.js ./demo/src/*.js'
+			'./gulpfile.js ./lib/index.js ./demo/src/*.js'
 		].join(' '),
 	function (err, stdout, stderr) {
 		if (stdout) {
