@@ -38,6 +38,39 @@ var someReactComponent = React.createClass({
 <link rel="stylesheet" href="bootstrap-multiselect.css" type="text/css" />
 ```
 
+## Note on data synchronization
+
+In case `this.state.myData` changes from outside of multiselect component, values and checkbox state will not update automatically. If you want to sync state, you have to call `.syncData()` on multiselect like in example below.
+
+```javascript
+
+var React = require('react');
+var Multiselect = require('react-bootstrap-multiselect');
+
+var someReactComponent = React.createClass({
+    getInitialState: function(){
+        var that = this;
+        $("element").on("event", function(){
+            $.get("new-data-from-url", function(newData){
+                that.setState(newData);
+
+                // to sync manually do
+                this.refs.myRef.syncData();
+            });
+        });
+
+        return {
+            myData : [{value:'One',selected:true},{value:'Two'}]
+        };
+    },
+    render: function () {
+        return (
+            <Multiselect onChange={this.handleChange} ref="myRef" data={this.state.myData} multiple />
+        );
+    }
+});
+```
+
 ## Documentation
 
 For in depth documentation, see the original
