@@ -42,7 +42,7 @@ gulp.task('get-options', function () {
 			return $(this).text().trim();
 		}).get();
 		if (options.indexOf('templates') === -1) {
-			options.push('templates')
+			options.push('templates');
 		}
 		options = options.sort();
 		fs.writeFile('./lib/get-options.js', [
