@@ -19,7 +19,7 @@
     "BSD-3-Clause"
   ],
   "dependencies": {
-    "jquery": "^2.1.4",
+    "jquery": ">=1.11.3",
     "react": ">=0.13.3"
   },
   "devDependencies": {

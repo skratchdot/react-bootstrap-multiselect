@@ -56,14 +56,14 @@ gulp.task('get-options', function () {
 
 gulp.task('bootstrap-dropdown', function () {
 	gulp.src('./node_modules/bootstrap/js/dropdown.js')
-		.pipe(wrap('exports.init = function (jQuery) {\n<%= contents %>\nreturn jQuery;\n};'))
+		.pipe(wrap('exports.init = function (jQuery) {\nif (jQuery.fn.dropdown) return jQuery;\n<%= contents %>\nreturn jQuery;\n};'))
 		.pipe(rename('bootstrap-dropdown.js'))
 		.pipe(gulp.dest('./lib'));
 });
 
 gulp.task('bootstrap-multiselect', function () {
 	gulp.src('./lib/bootstrap-multiselect-original.js')
-		.pipe(wrap('exports.init = function (jQuery) {\n<%= contents %>\nreturn jQuery;\n};'))
+		.pipe(wrap('exports.init = function (jQuery) {\nif (jQuery.fn.multiselect) return jQuery;\n<%= contents %>\nreturn jQuery;\n};'))
 		.pipe(replace('window.jQuery', 'jQuery'))
 		.pipe(rename('bootstrap-multiselect.js'))
 		.pipe(gulp.dest('./lib'));
