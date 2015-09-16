@@ -39,13 +39,15 @@ var App = React.createClass({
 						<Multiselect onChange={this.handleChange} data={this.state.groups} multiple />
 						<h4>single select:</h4>
 						<Multiselect onChange={this.handleChange} data={this.state.groups} />
-						<h4>large list:</h4>
+						<h4>large list (maxHeight/buttonText):</h4>
 						<Multiselect onChange={this.handleChange} data={this.state.large} multiple
 							maxHeight={200}
 							buttonText={function(options, select) {
 								return 'Long List / Custom Title!';
 							}}
 						/>
+						<h4>buttonClass:</h4>
+						<Multiselect buttonClass="btn btn-danger" onChange={this.handleChange} data={this.state.list} multiple />
 					</BS.Col>
 					<BS.Col md={9}>
 						<h2>Demo Source Code:</h2>
