@@ -1,5 +1,6 @@
 'use strict';
 var React = require('react');
+var ReactDOM = require('react-dom');
 var BS = require('react-bootstrap');
 var Header = require('./Header');
 var Multiselect = require('../../lib/index.js');
@@ -21,11 +22,6 @@ var App = React.createClass({
 			list: [{value:'One',selected:true},{value:'Two'},{value:'Three'},{value:'Four',label:'Four Label'}]
 		};
 	},
-	handleChange: function () {
-		this.setState({
-			list: [{value:'One'},{value:'Two'},{value:'Three'},{value:'Four',label:'Four Label'}]
-		});
-	},
 	render: function () {
 		return (
 			<BS.Grid>
@@ -34,20 +30,20 @@ var App = React.createClass({
 					<BS.Col md={3}>
 						<h2>Demo:</h2>
 						<h4>no optgroups:</h4>
-						<Multiselect onChange={this.handleChange} data={this.state.list} multiple />
+						<Multiselect data={this.state.list} multiple />
 						<h4>with optgroups:</h4>
-						<Multiselect onChange={this.handleChange} data={this.state.groups} multiple />
+						<Multiselect data={this.state.groups} multiple />
 						<h4>single select:</h4>
-						<Multiselect onChange={this.handleChange} data={this.state.groups} />
+						<Multiselect data={this.state.groups} />
 						<h4>large list (maxHeight/buttonText):</h4>
-						<Multiselect onChange={this.handleChange} data={this.state.large} multiple
+						<Multiselect data={this.state.large} multiple
 							maxHeight={200}
 							buttonText={function(options, select) {
 								return 'Long List / Custom Title!';
 							}}
 						/>
 						<h4>buttonClass:</h4>
-						<Multiselect buttonClass="btn btn-danger" onChange={this.handleChange} data={this.state.list} multiple />
+						<Multiselect buttonClass="btn btn-danger" data={this.state.list} multiple />
 					</BS.Col>
 					<BS.Col md={9}>
 						<h2>Demo Source Code:</h2>
@@ -60,8 +56,4 @@ var App = React.createClass({
 });
 
 // init our demo app
-React.render(<App />, document.getElementById('app'));
-
-// we are using browserify. setup the browser.
-exports.React = window.React = React;
-
+ReactDOM.render(<App />, document.getElementById('app'));
