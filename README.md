@@ -55,7 +55,7 @@ var someReactComponent = React.createClass({
                 that.setState(newData);
 
                 // to sync manually do
-                this.refs.myRef.syncData();
+                that.refs.myRef.syncData();
             });
         });
 
