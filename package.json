@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "bootstrap": "^3.3.5",
-    "cheerio": "^0.19.0",
     "gulp": "^3.9.0",
     "gulp-browserify": "^0.5.1",
     "gulp-connect": "^2.2.0",
@@ -41,7 +40,6 @@
     "react-bootstrap": "^0.27.3",
     "react-dom": "^0.14.2",
     "reactify": "^1.1.1",
-    "request": "^2.65.0"
   },
   "keywords": [
     "react",
