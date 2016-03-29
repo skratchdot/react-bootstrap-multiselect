@@ -38,6 +38,13 @@ var someReactComponent = React.createClass({
 <link rel="stylesheet" href="bootstrap-multiselect.css" type="text/css" />
 ```
 
+## Supported React Versions
+
+- React 13 users should use [react-bootstrap-multiselect v0.6.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v0.6.0)
+
+- React 14 users should use [react-bootstrap-multiselect v1.0.2](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v1.0.2)
+
+
 ## Note on data synchronization
 
 In case `this.state.myData` changes from outside of multiselect component, values and checkbox state will not update automatically. If you want to sync state, you have to call `.syncData()` on multiselect like in example below.
