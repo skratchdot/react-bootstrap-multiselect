@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-multiselect",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A multiselect component for react (with bootstrap). This is a react port of: https://github.com/davidstutz/bootstrap-multiselect",
   "main": "./lib/index.js",
   "scripts": {
@@ -19,26 +19,27 @@
     "BSD-3-Clause"
   ],
   "dependencies": {
-    "jquery": ">=2.1.x",
-    "react": ">=0.14.x"
+    "jquery": ">=2.2.0",
+    "object-assign": "^4.0.1",
+    "react": ">=15.0.0"
   },
   "devDependencies": {
-    "bootstrap": "^3.3.5",
-    "gulp": "^3.9.0",
+    "bootstrap": "^3.3.6",
+    "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
-    "gulp-connect": "^2.2.0",
+    "gulp-connect": "^3.2.2",
     "gulp-cssmin": "^0.1.7",
     "gulp-download": "0.0.1",
-    "gulp-less": "^3.0.3",
-    "gulp-nodemon": "^2.0.4",
+    "gulp-less": "^3.0.5",
+    "gulp-nodemon": "^2.0.6",
     "gulp-react": "^3.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-uglify": "^1.4.2",
+    "gulp-uglify": "^1.5.3",
     "gulp-wrap": "^0.11.0",
     "jsxhint": "^0.15.1",
-    "react-bootstrap": "^0.27.3",
-    "react-dom": "^0.14.2",
+    "react-bootstrap": "^0.28.5",
+    "react-dom": "^15.0.1",
     "reactify": "^1.1.1"
   },
   "keywords": [
