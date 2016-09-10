@@ -1,12 +1,12 @@
 # Change Log
 
-## [Unreleased](https://github.com/skratchdot/react-bootstrap-multiselect/tree/HEAD)
-
-[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.1.0...HEAD)
+## [v2.2.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.2.0) (2016-09-10)
+[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.1.0...v2.2.0)
 
 **Closed issues:**
 
 - Upgrade to new bootstrap-multiselect [\#43](https://github.com/skratchdot/react-bootstrap-multiselect/issues/43)
+- Require 'bootstrap-dropdown' causes conflict [\#39](https://github.com/skratchdot/react-bootstrap-multiselect/issues/39)
 
 **Merged pull requests:**
 
