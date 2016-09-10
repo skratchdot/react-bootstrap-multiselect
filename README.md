@@ -44,7 +44,7 @@ var someReactComponent = React.createClass({
 
 - React 14 users should use [react-bootstrap-multiselect v1.0.2](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v1.0.2)
 
-- React 15 users should use [react-bootstrap-multiselect v2.0.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.0.0)
+- React 15 users should use [react-bootstrap-multiselect v2.x.x](https://github.com/skratchdot/react-bootstrap-multiselect/)
 
 
 ## Note on data synchronization
