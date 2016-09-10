@@ -1,9 +1,12 @@
 {
   "name": "react-bootstrap-multiselect",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A multiselect component for react (with bootstrap). This is a react port of: https://github.com/davidstutz/bootstrap-multiselect",
   "main": "./lib/index.js",
   "scripts": {
+    "build": "gulp build",
+    "changelog": "github_changelog_generator",
+    "start": "gulp default",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "skratchdot",

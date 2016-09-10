@@ -89,6 +89,7 @@ For in depth documentation, see the original
 ## Links
 
 - [Source Code](https://github.com/skratchdot/react-bootstrap-multiselect)
+- [Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/blob/master/CHANGELOG.md)
 - [Live Demo](http://projects.skratchdot.com/react-bootstrap-multiselect/)
 - [Original Plugin](https://github.com/davidstutz/bootstrap-multiselect)
 
