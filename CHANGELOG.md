@@ -1,7 +1,7 @@
 # Change Log
 
 ## [v2.3.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.3.0) (2016-10-11)
-[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.3.0...HEAD)
+[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.2.0...v2.3.0)
 
 **Closed issues:**
 
