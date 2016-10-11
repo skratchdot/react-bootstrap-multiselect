@@ -1,5 +1,12 @@
 # Change Log
 
+## [v2.3.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.3.0) (2016-10-11)
+[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.3.0...HEAD)
+
+**Closed issues:**
+
+- Extraneous props passed to select element, resulting in React warning [\#49](https://github.com/skratchdot/react-bootstrap-multiselect/issues/49)
+
 ## [v2.2.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.2.0) (2016-09-10)
 [Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.1.0...v2.2.0)
 
@@ -47,7 +54,7 @@
 - Update gulp get-options [\#32](https://github.com/skratchdot/react-bootstrap-multiselect/pull/32) ([lvgunst](https://github.com/lvgunst))
 - Add all possible bootstrap-multiselect options [\#31](https://github.com/skratchdot/react-bootstrap-multiselect/pull/31) ([lvgunst](https://github.com/lvgunst))
 - add scss stylesheet [\#29](https://github.com/skratchdot/react-bootstrap-multiselect/pull/29) ([dmt0](https://github.com/dmt0))
-- Update get-options.js [\#27](https://github.com/skratchdot/react-bootstrap-multiselect/pull/27) ([eaiero](https://github.com/eaiero))
+- Update get-options.js [\#27](https://github.com/skratchdot/react-bootstrap-multiselect/pull/27) ([aiwb](https://github.com/aiwb))
 
 ## [v1.0.1](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v1.0.1) (2016-01-08)
 [Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v1.0.0...v1.0.1)
