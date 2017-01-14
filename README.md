@@ -7,7 +7,8 @@
 
 ## Description
 
-A multiselect component for react (with bootstrap). This is a react port of:
+A multiselect component for react (with bootstrap). This is a react wrapper
+around an existing jQuery/bootstrap library (it is not a pure react port):
 
 [bootstrap-multiselect](https://github.com/davidstutz/bootstrap-multiselect)
 
@@ -92,6 +93,12 @@ For in depth documentation, see the original
 - [Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/blob/master/CHANGELOG.md)
 - [Live Demo](http://projects.skratchdot.com/react-bootstrap-multiselect/)
 - [Original Plugin](https://github.com/davidstutz/bootstrap-multiselect)
+
+
+## Similar React Components
+
+- [react-select](https://jedwatson.github.io/react-select/)
+- [react-selectize](https://www.npmjs.com/package/react-selectize)
 
 
 ## License
