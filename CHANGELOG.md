@@ -1,5 +1,23 @@
 # Change Log
 
+## [Unreleased](https://github.com/skratchdot/react-bootstrap-multiselect/tree/HEAD)
+[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.4.0...HEAD)
+
+## [v2.4.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.4.0) (2017-04-20)
+[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.3.0...v2.4.0)
+
+**Closed issues:**
+
+- React v15.5 createClass\(\) deprecation [\#68](https://github.com/skratchdot/react-bootstrap-multiselect/issues/68)
+- selecting multiple values \(having same value key\) but from different group not appear as different [\#64](https://github.com/skratchdot/react-bootstrap-multiselect/issues/64)
+- how to set default selected in list [\#60](https://github.com/skratchdot/react-bootstrap-multiselect/issues/60)
+
+**Merged pull requests:**
+
+- Migrate from createClass\(\) to es6 classes [\#71](https://github.com/skratchdot/react-bootstrap-multiselect/pull/71) ([sman591](https://github.com/sman591))
+- React v15.5 createClass deprecation resolution [\#69](https://github.com/skratchdot/react-bootstrap-multiselect/pull/69) ([audiolion](https://github.com/audiolion))
+- Play nicely when bootstrap dropdown is already loaded. [\#61](https://github.com/skratchdot/react-bootstrap-multiselect/pull/61) ([rosselliott](https://github.com/rosselliott))
+
 ## [v2.3.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.3.0) (2016-10-11)
 [Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.2.0...v2.3.0)
 
