@@ -1,7 +1,10 @@
 'use strict';
 
 var gulp = require('gulp');
-var browserify = require('gulp-browserify');
+var babel = require('babelify');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var cssmin = require('gulp-cssmin');
 var download = require('gulp-download');
 var exec = require('child_process').exec;
@@ -119,13 +122,16 @@ gulp.task('demo', function () {
 	buildStyles('demo');
 	buildStyles('bootstrap-multiselect');
 
+	var bundle = browserify('./demo/src/App.js', {
+		debug: true
+	}).transform(babel.configure({
+		presets: ['es2015', 'react']
+	}));
+
 	// scripts
-	gulp.src('./demo/src/App.js')
-		.pipe(browserify({
-			debug: true,
-			transform: ['reactify']
-		}))
-		.pipe(rename('demo.debug.js'))
+	bundle.bundle()
+		.pipe(source('demo.debug.js'))
+		.pipe(buffer())
 		.pipe(gulp.dest('./demo/www/js/'))
 		.pipe(uglify())
 		.pipe(rename('demo.min.js'))
