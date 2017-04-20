@@ -122,20 +122,25 @@ gulp.task('demo', function () {
 	buildStyles('demo');
 	buildStyles('bootstrap-multiselect');
 
-	var bundle = browserify('./demo/src/App.js', {
+	var demoBundle = browserify('./demo/src/App.js', {
 		debug: true
-	}).transform(babel.configure({
-		presets: ['es2015', 'react']
-	}));
+	}).transform(babel);
 
 	// scripts
-	bundle.bundle()
+	demoBundle.bundle()
 		.pipe(source('demo.debug.js'))
 		.pipe(buffer())
 		.pipe(gulp.dest('./demo/www/js/'))
 		.pipe(uglify())
 		.pipe(rename('demo.min.js'))
 		.pipe(gulp.dest('./demo/www/js/'));
+
+	var distBundle = browserify('./lib/index.js').transform(babel);
+
+	distBundle.bundle()
+		.pipe(source('index.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('server', function() {
