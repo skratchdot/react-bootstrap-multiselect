@@ -1889,7 +1889,7 @@ var MultiSelect = function (_React$Component) {
 		value: function componentDidMount() {
 			var $this = this;
 			// initialize
-			$this.$multiselect = $($this.refs.multiselect);
+			$this.$multiselect = $($this.selectRef);
 			$this.$multiselect.multiselect($this.getOptionsFromProps());
 			$this.setOptionsFromProps();
 			$this.$multiselect.multiselect('dataprovider', $this.props.data || []);
@@ -1923,6 +1923,8 @@ var MultiSelect = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
+			var _this2 = this;
+
 			//this.setOptionsFromProps();
 			var options = getOptions();
 			var props = {};
@@ -1931,7 +1933,11 @@ var MultiSelect = function (_React$Component) {
 					props[key] = this.props[key];
 				}
 			}
-			return React.createElement('select', objectAssign({}, props, { ref: 'multiselect' }));
+			return React.createElement('select', objectAssign({}, props, {
+				ref: function ref(select) {
+					return _this2.selectRef = select;
+				}
+			}));
 		}
 	}]);
 
