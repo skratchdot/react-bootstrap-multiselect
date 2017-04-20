@@ -33,6 +33,7 @@
     "bootstrap": "^3.3.7",
     "browserify": "^14.3.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-connect": "^5.0.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-download": "0.0.1",
