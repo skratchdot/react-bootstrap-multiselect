@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var babel = require('babelify');
+var gulpBabel = require('gulp-babel');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -135,12 +136,9 @@ gulp.task('demo', function () {
 		.pipe(rename('demo.min.js'))
 		.pipe(gulp.dest('./demo/www/js/'));
 
-	var distBundle = browserify('./lib/index.js').transform(babel);
-
-	distBundle.bundle()
-		.pipe(source('index.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('./dist/'));
+	gulp.src('lib/*')
+		.pipe(gulpBabel())
+		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('server', function() {
