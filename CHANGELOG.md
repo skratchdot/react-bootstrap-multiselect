@@ -1,7 +1,11 @@
 # Change Log
 
-## [Unreleased](https://github.com/skratchdot/react-bootstrap-multiselect/tree/HEAD)
-[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.4.0...HEAD)
+## [v2.4.1](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.4.1) (2017-04-21)
+[Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.4.0...v2.4.1)
+
+**Merged pull requests:**
+
+- Fix dist build [\#72](https://github.com/skratchdot/react-bootstrap-multiselect/pull/72) ([sman591](https://github.com/sman591))
 
 ## [v2.4.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v2.4.0) (2017-04-20)
 [Full Changelog](https://github.com/skratchdot/react-bootstrap-multiselect/compare/v2.3.0...v2.4.0)
