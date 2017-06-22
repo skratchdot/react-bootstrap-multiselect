@@ -11,14 +11,17 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var $;
-if (typeof window !== 'undefined' && window && window.jQuery) {
-	$ = window.jQuery;
+if (typeof window !== 'undefined' && window) {
+	if (window.jQuery) {
+		$ = window.jQuery;
+	} else {
+		$ = require('jquery');
+		window.jQuery = $;
+	}
 } else {
 	$ = require('jquery');
-	window.jQuery = $;
 }
 
-var BS = require('bootstrap');
 var React = require('react');
 var objectAssign = require('object-assign');
 var getOptions = require('./get-options.js');
@@ -26,10 +29,14 @@ var bsMultiselect = require('./bootstrap-multiselect.js');
 var bsDropdown;
 
 // make it play nice when we already have bootstrap dropdown loaded.
-if (typeof BS === 'undefined' || typeof BS.dropdown === 'undefined') {
+try {
+	var BS = require('bootstrap');
+	if (typeof BS.dropdown !== 'undefined') {
+		bsDropdown = BS.dropdown;
+	}
+} catch (e) {}
+if (!bsDropdown) {
 	bsDropdown = require('./bootstrap-dropdown.js');
-} else {
-	bsDropdown = BS.dropdown;
 }
 
 $ = bsDropdown.init($);
