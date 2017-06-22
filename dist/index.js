@@ -27,16 +27,14 @@ var objectAssign = require('object-assign');
 var getOptions = require('./get-options.js');
 var bsMultiselect = require('./bootstrap-multiselect.js');
 var bsDropdown;
-var BS;
+
 // make it play nice when we already have bootstrap dropdown loaded.
 try {
-	BS = require('bootstrap');
+	var BS = require('bootstrap');
 	if (typeof BS.dropdown !== 'undefined') {
 		bsDropdown = BS.dropdown;
 	}
-} catch (e) {
-	console.log('No bootstap');
-}
+} catch (e) {}
 if (!bsDropdown) {
 	bsDropdown = require('./bootstrap-dropdown.js');
 }
