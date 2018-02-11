@@ -35,6 +35,7 @@
     "jquery": "*",
     "prop-types": "*",
     "react": "*",
+    "boostrap": "*",
     "bootstrap-multiselect": "*"
   },
   "devDependencies": {

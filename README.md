@@ -1,8 +1,13 @@
 # react-bootstrap-multiselect
 
 [![NPM version](https://badge.fury.io/js/react-bootstrap-multiselect.svg)](http://badge.fury.io/js/react-bootstrap-multiselect)
+[![Build Status](https://travis-ci.org/skratchdot/react-bootstrap-multiselect.svg?branch=master)](https://travis-ci.org/skratchdot/react-bootstrap-multiselect)
+[![Code Climate](https://codeclimate.com/github/skratchdot/react-bootstrap-multiselect.png)](https://codeclimate.com/github/skratchdot/react-bootstrap-multiselect)
+[![Coverage Status](https://coveralls.io/repos/skratchdot/react-bootstrap-multiselect/badge.svg?branch=master&service=github)](https://coveralls.io/github/skratchdot/react-bootstrap-multiselect?branch=master)
 [![Dependency Status](https://david-dm.org/skratchdot/react-bootstrap-multiselect.svg)](https://david-dm.org/skratchdot/react-bootstrap-multiselect)
 [![devDependency Status](https://david-dm.org/skratchdot/react-bootstrap-multiselect/dev-status.svg)](https://david-dm.org/skratchdot/react-bootstrap-multiselect#info=devDependencies)
+
+[![NPM](https://nodei.co/npm/react-bootstrap-multiselect.png)](https://npmjs.org/package/react-bootstrap-multiselect)
 
 ## Description
 
@@ -13,71 +18,35 @@ around an existing jQuery/bootstrap library (it is not a pure react port):
 
 ## Getting Started
 
-1. Install the module with: `npm install --save react-bootstrap-multiselect`
+1. Install the peer dependencies:
+   `npm install --save jquery bootstrap@3 bootstrap-multiselect react prop-types`
 
-2. Create your module (you need to use something like browserify to build)
+2. Install the main module:
+   `npm install --save react-bootstrap-multiselect`
 
-```javascript
-var React = require('react');
-var Multiselect = require('react-bootstrap-multiselect');
-var someReactComponent = React.createClass({
-  render: function() {
-    return <Multiselect />;
-  }
-});
-```
-
-3. Include the multi-select CSS in your project somewhere. The CSS file is here:
-   [bootstrap-multiselect.css](https://raw.githubusercontent.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css)
-   (don't hotlink- download and host your own copy)
-
-```html
-<link rel="stylesheet" href="bootstrap-multiselect.css" type="text/css" />
-```
-
-## Supported React Versions
-
-* React 13 users should use [react-bootstrap-multiselect v0.6.0](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v0.6.0)
-
-* React 14 users should use [react-bootstrap-multiselect v1.0.2](https://github.com/skratchdot/react-bootstrap-multiselect/tree/v1.0.2)
-
-* React 15 users should use [react-bootstrap-multiselect v2.x.x](https://github.com/skratchdot/react-bootstrap-multiselect/)
-
-## Note on data synchronization
-
-In case `this.state.myData` changes from outside of multiselect component, values and checkbox state will not update automatically. If you want to sync state, you have to call `.syncData()` on multiselect like in example below.
+3. This is a commonjs library. You will need a tool like browserify/webpack/etc
+   to build your code. It is also import you import
 
 ```javascript
-var React = require('react');
-var Multiselect = require('react-bootstrap-multiselect');
+const React = require('react');
+const jQuery = require('jquery');
+// this step is important, or else bootstrap will throw an error
+window.jQuery = window.$ = jQuery;
+// include required js
+require('bootstrap/dist/js/bootstrap.js');
+require('bootstrap-multiselect/dist/js/bootstrap-multiselect.js');
+// include required css
+require('bootstrap/dist/css/bootstrap.css');
+require('bootstrap-multiselect/dist/css/bootstrap-multiselect.css');
+// now include the multiselect component
+const MultiSelect = require('react-bootstrap-multiselect');
 
-var someReactComponent = React.createClass({
-  getInitialState: function() {
-    var that = this;
-    $('element').on('event', function() {
-      $.get('new-data-from-url', function(newData) {
-        that.setState(newData);
-
-        // to sync manually do
-        that.refs.myRef.syncData();
-      });
-    });
-
-    return {
-      myData: [{ value: 'One', selected: true }, { value: 'Two' }]
-    };
-  },
+// use the multiselect component
+class MyComponent extends React.Component {
   render: function() {
-    return (
-      <Multiselect
-        onChange={this.handleChange}
-        ref="myRef"
-        data={this.state.myData}
-        multiple
-      />
-    );
+    return <MultiSelect data={[]} />;
   }
-});
+};
 ```
 
 ## Documentation
