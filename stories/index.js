@@ -9,7 +9,7 @@ require('bootstrap/dist/js/bootstrap.js');
 require('bootstrap-multiselect/dist/js/bootstrap-multiselect.js');
 require('bootstrap/dist/css/bootstrap.css');
 require('bootstrap-multiselect/dist/css/bootstrap-multiselect.css');
-import Multiselect from '../lib/index';
+import Multiselect from '../src/index';
 import exampleData from './example-data';
 
 storiesOf('MultiSelect', module)
