@@ -2,7 +2,7 @@ import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-  input: 'src/index.js',
+  input: 'lib/index.js',
   output: {
     file: 'dist/bundle.js',
     format: 'cjs',
@@ -16,8 +16,8 @@ export default {
     })
   ],
   external: [
-    'bootstrap-daterangepicker',
-    'moment',
+    'bootstrap',
+    'bootstrap-multiselect',
     'jquery',
     'react',
     'prop-types'

@@ -1,25 +1,28 @@
 {
   "name": "react-bootstrap-multiselect",
   "version": "2.4.1",
-  "description": "A multiselect component for react (with bootstrap). This is a react port of: https://github.com/davidstutz/bootstrap-multiselect",
-  "main": "dist/index.js",
+  "description":
+    "A multiselect component for react (with bootstrap). This is a react port of: https://github.com/davidstutz/bootstrap-multiselect",
+  "main": "./dist/bundle.js",
+  "files": ["dist/"],
   "scripts": {
-    "build": "npm-run-all clean build:options format lint cover build:lib build:storybook",
+    "build": "npm-run-all clean format lint cover build:lib build:storybook",
     "build:lib": "rollup -c",
-    "build:options": "./scripts/build-options.js",
     "build:storybook": "build-storybook -c .storybook -o ./docs",
-    "changelog": "github_changelog_generator -u skratchdot -p react-bootstrap-daterangepicker",
+    "changelog":
+      "github_changelog_generator -u skratchdot -p react-bootstrap-daterangepicker",
     "clean": "rimraf ./coverage/ ./docs/",
     "cover": "npm run test -- --coverage",
     "coveralls": "cat coverage/lcov.info | coveralls --verbose",
     "format": "prettier --write --single-quote '**/*.{js,md}'",
     "lint": "eslint .",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "TZ=America/New_York jest",
+    "test": "jest",
     "watch": "npm-run-all --parallel watch:cover storybook",
     "watch:cover": "npm run cover -- --watch"
   },
   "author": "skratchdot",
+  "homepage": "https://github.com/skratchdot/react-bootstrap-multiselect/",
   "repository": {
     "type": "git",
     "url": "git://github.com/skratchdot/react-bootstrap-multiselect.git"
@@ -27,14 +30,12 @@
   "bugs": {
     "url": "https://github.com/skratchdot/react-bootstrap-multiselect/issues"
   },
-  "license": [
-    "Apache-2.0",
-    "BSD-3-Clause"
-  ],
+  "license": ["Apache-2.0", "BSD-3-Clause"],
   "peerDependencies": {
     "jquery": "*",
     "prop-types": "*",
-    "react": "*"
+    "react": "*",
+    "bootstrap-multiselect": "*"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.12",
@@ -50,6 +51,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^3.3.7",
+    "bootstrap-multiselect": "^0.9.13-1",
     "coveralls": "^3.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
