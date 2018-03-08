@@ -18,14 +18,14 @@ around an existing jQuery/bootstrap library (it is not a pure react port):
 
 ## Getting Started
 
-1. Install the peer dependencies:
-   `npm install --save jquery bootstrap@3 bootstrap-multiselect react prop-types`
+1.  Install the peer dependencies:
+    `npm install --save jquery bootstrap@3 bootstrap-multiselect react prop-types`
 
-2. Install the main module:
-   `npm install --save react-bootstrap-multiselect`
+2.  Install the main module:
+    `npm install --save react-bootstrap-multiselect`
 
-3. This is a commonjs library. You will need a tool like browserify/webpack/etc
-   to build your code. It is also import you import
+3.  This is a commonjs library. You will need a tool like browserify/webpack/etc
+    to build your code. It is also import you import
 
 ```javascript
 const React = require('react');

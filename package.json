@@ -1,16 +1,16 @@
 {
   "name": "react-bootstrap-multiselect",
   "version": "2.4.1",
-  "description":
-    "A multiselect component for react (with bootstrap). This is a react port of: https://github.com/davidstutz/bootstrap-multiselect",
+  "description": "A multiselect component for react (with bootstrap). This is a react port of: https://github.com/davidstutz/bootstrap-multiselect",
   "main": "./dist/bundle.js",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "npm-run-all clean format lint cover build:lib build:storybook",
     "build:lib": "rollup -c",
     "build:storybook": "build-storybook -c .storybook -o ./docs",
-    "changelog":
-      "github_changelog_generator -u skratchdot -p react-bootstrap-daterangepicker",
+    "changelog": "github_changelog_generator -u skratchdot -p react-bootstrap-daterangepicker",
     "clean": "rimraf ./coverage/ ./docs/",
     "cover": "npm run test -- --coverage",
     "coveralls": "cat coverage/lcov.info | coveralls --verbose",
@@ -30,7 +30,10 @@
   "bugs": {
     "url": "https://github.com/skratchdot/react-bootstrap-multiselect/issues"
   },
-  "license": ["Apache-2.0", "BSD-3-Clause"],
+  "license": [
+    "Apache-2.0",
+    "BSD-3-Clause"
+  ],
   "peerDependencies": {
     "jquery": "*",
     "prop-types": "*",
@@ -39,38 +42,38 @@
     "bootstrap-multiselect": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.3.12",
-    "@storybook/addon-info": "^3.3.12",
-    "@storybook/addon-knobs": "^3.3.12",
-    "@storybook/addon-options": "^3.3.12",
-    "@storybook/react": "^3.3.12",
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-info": "^3.3.15",
+    "@storybook/addon-knobs": "^3.3.15",
+    "@storybook/addon-options": "^3.3.15",
+    "@storybook/react": "^3.3.15",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-jest": "^22.2.2",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^3.3.7",
-    "bootstrap-multiselect": "^0.9.13-1",
+    "bootstrap-multiselect": "^0.9.13",
     "coveralls": "^3.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.17.0",
+    "eslint": "^4.18.2",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.1",
-    "jest": "^22.2.2",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.2",
     "jquery": "^3.3.1",
     "npm-run-all": "^4.1.2",
-    "prettier": "^1.10.2",
-    "prop-types": "^15.6.0",
+    "prettier": "^1.11.1",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "regenerator-runtime": "^0.11.1",
     "rimraf": "^2.6.2",
-    "rollup": "^0.55.5",
+    "rollup": "^0.56.5",
     "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-node-resolve": "^3.0.2"
+    "rollup-plugin-node-resolve": "^3.2.0"
   },
   "keywords": [
     "react",
